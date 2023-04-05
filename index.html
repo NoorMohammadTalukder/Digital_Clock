@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <video autoplay muted loop id="bg-video">
+      <source src="./bg.mp4" type="video/mp4" />
+    </video>
+    <div id="clock"></div>
+  </body>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let seconds = now.getSeconds();
+
+      if (hours < 10) {
+        hours = "0" + hours;
+      }
+
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+
+      const time = hours + ":" + minutes + ":" + seconds;
+      document.getElementById("clock").innerHTML = time;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</html>
