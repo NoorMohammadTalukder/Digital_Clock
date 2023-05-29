@@ -1,12 +1,10 @@
 # About
 
-This simple digital clock application using html,css and js
+This simple digital clock application using html,css and js build for assignment purpose
+
 ## Installation
 
 Just clone the repository and open the index.html file in your browser.
-
-
-
 
 ## Description of project
 
